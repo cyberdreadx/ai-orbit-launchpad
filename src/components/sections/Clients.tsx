@@ -13,17 +13,17 @@ const Clients = () => {
     {
       name: "Flow Angels Entertainment",
       location: "Miami, FL",
-      logo: "/lovable-uploads/8d195632-0aba-45c1-97b8-0df3fe9409e6.png"
+      logo: "/images/flow-angels-logo.png"
     },
     {
       name: "RougeChain LLC",
       location: "Miami Beach, FL", 
-      logo: "/lovable-uploads/6122cbe8-3c8b-4136-8adb-1de40a2f63d3.png"
+      logo: "/images/rougechain-logo.png"
     },
     {
       name: "GLTCH Social Network",
       location: "Los Angeles, CA",
-      logo: "/lovable-uploads/18027efe-48f6-482e-b7e1-ba64811bee2e.png"
+      logo: "/images/gltch-logo.png"
     }
   ];
 
