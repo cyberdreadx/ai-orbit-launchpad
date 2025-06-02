@@ -1,18 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, ArrowRight, Zap } from "lucide-react";
-
 const JumpstartPackage = () => {
-  const features = [
-    "AI chatbot set up for your website or Instagram",
-    "Workflow automation (emails, scheduling, reports)",
-    "Weekly AI content system (blogs, captions, or product copy)",
-    "1-on-1 onboarding call + setup walkthrough"
-  ];
-
-  return (
-    <section className="py-20 px-4 relative">
+  const features = ["AI chatbot set up for your website or Instagram", "Workflow automation (emails, scheduling, reports)", "Weekly AI content system (blogs, captions, or product copy)", "1-on-1 onboarding call + setup walkthrough"];
+  return <section className="py-20 px-4 relative">
       <div className="absolute inset-0 bg-gradient-to-r from-purple-900/10 via-blue-900/10 to-purple-900/10" />
       
       <div className="max-w-4xl mx-auto relative">
@@ -35,12 +26,10 @@ const JumpstartPackage = () => {
           </CardHeader>
           <CardContent className="space-y-6">
             <ul className="space-y-4">
-              {features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-3 text-white/90">
+              {features.map((feature, index) => <li key={index} className="flex items-start gap-3 text-white/90">
                   <Check className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
                   <span>{feature}</span>
-                </li>
-              ))}
+                </li>)}
             </ul>
 
             <div className="border-t border-white/10 pt-6 text-center">
@@ -62,29 +51,17 @@ const JumpstartPackage = () => {
               </div>
 
               <div className="space-y-3">
-                <Button 
-                  size="lg" 
-                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-6 text-lg rounded-full shadow-2xl shadow-purple-500/25 transition-all duration-300 hover:scale-105"
-                  onClick={() => window.open('https://calendly.com/eharouge/30min', '_blank')}
-                >
+                <Button size="lg" className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-6 text-lg rounded-full shadow-2xl shadow-purple-500/25 transition-all duration-300 hover:scale-105" onClick={() => window.open('https://calendly.com/eharouge/30min', '_blank')}>
                   🔘 Book Your Jumpstart Call
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
                 
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="w-full border-white/30 backdrop-blur-md py-6 text-lg rounded-full transition-all duration-300 hover:scale-105 text-white hover:bg-white/10"
-                >
-                  🔘 View Example Setup
-                </Button>
+                
               </div>
             </div>
           </CardContent>
         </Card>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default JumpstartPackage;
