@@ -28,15 +28,15 @@ const Clients = () => {
   ];
 
   return (
-    <section className="py-20 px-4 relative">
+    <section className="py-16 md:py-20 px-4 relative">
       <div className="absolute inset-0 bg-gradient-to-r from-slate-900/50 via-purple-900/30 to-slate-900/50" />
       
       <div className="max-w-6xl mx-auto relative">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
             Trusted by Forward-Thinking Companies
           </h2>
-          <p className="text-xl text-white/70 mb-8">
+          <p className="text-lg md:text-xl text-white/70 mb-6 md:mb-8">
             Join the businesses already transforming with AI
           </p>
         </div>
@@ -48,12 +48,12 @@ const Clients = () => {
           }}
           className="w-full max-w-5xl mx-auto"
         >
-          <CarouselContent className="-ml-2 md:-ml-4">
+          <CarouselContent className="-ml-1 md:-ml-2 lg:-ml-4">
             {clients.map((client, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                <Card className="bg-white/10 backdrop-blur-lg border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 p-8">
-                  <div className="flex flex-col items-center text-center space-y-4">
-                    <div className="w-32 h-32 flex items-center justify-center">
+              <CarouselItem key={index} className="pl-1 md:pl-2 lg:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                <Card className="bg-white/10 backdrop-blur-lg border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 p-4 md:p-6 lg:p-8">
+                  <div className="flex flex-col items-center text-center space-y-3 md:space-y-4">
+                    <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center">
                       <img 
                         src={client.logo} 
                         alt={`${client.name} logo`}
@@ -61,10 +61,10 @@ const Clients = () => {
                       />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-1">
+                      <h3 className="text-base md:text-lg font-semibold text-white mb-1">
                         {client.name}
                       </h3>
-                      <p className="text-white/60 text-sm">
+                      <p className="text-white/60 text-xs md:text-sm">
                         {client.location}
                       </p>
                     </div>
@@ -73,8 +73,8 @@ const Clients = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden md:flex -left-12 bg-white/10 border-white/20 hover:bg-white/20 text-white" />
-          <CarouselNext className="hidden md:flex -right-12 bg-white/10 border-white/20 hover:bg-white/20 text-white" />
+          <CarouselPrevious className="hidden sm:flex -left-8 md:-left-12 bg-white/10 border-white/20 hover:bg-white/20 text-white" />
+          <CarouselNext className="hidden sm:flex -right-8 md:-right-12 bg-white/10 border-white/20 hover:bg-white/20 text-white" />
         </Carousel>
       </div>
     </section>
