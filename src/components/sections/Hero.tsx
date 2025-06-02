@@ -1,6 +1,8 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Zap } from "lucide-react";
 import OrbitAnimation from "../ui/OrbitAnimation";
+
 const Hero = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
       {/* Background Effects */}
@@ -31,7 +33,11 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 text-lg rounded-full shadow-2xl shadow-blue-500/25 transition-all duration-300 hover:scale-105">
+          <Button 
+            size="lg" 
+            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 text-lg rounded-full shadow-2xl shadow-blue-500/25 transition-all duration-300 hover:scale-105"
+            onClick={() => window.open('https://calendly.com/eharouge/30min', '_blank')}
+          >
             Get Started Today
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
@@ -59,4 +65,5 @@ const Hero = () => {
       </div>
     </section>;
 };
+
 export default Hero;
