@@ -1,11 +1,8 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Zap } from "lucide-react";
 import OrbitAnimation from "../ui/OrbitAnimation";
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,119,198,0.3),transparent_50%)]" />
@@ -34,19 +31,12 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button 
-            size="lg" 
-            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 text-lg rounded-full shadow-2xl shadow-blue-500/25 transition-all duration-300 hover:scale-105"
-          >
+          <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 text-lg rounded-full shadow-2xl shadow-blue-500/25 transition-all duration-300 hover:scale-105">
             Get Started Today
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
           
-          <Button 
-            variant="outline" 
-            size="lg"
-            className="border-white/30 text-white hover:bg-white/10 backdrop-blur-md px-8 py-6 text-lg rounded-full transition-all duration-300 hover:scale-105"
-          >
+          <Button variant="outline" size="lg" className="border-white/30 backdrop-blur-md px-8 py-6 text-lg rounded-full transition-all duration-300 hover:scale-105 text-white bg-green-600 hover:bg-green-500">
             <Zap className="mr-2 w-5 h-5" />
             View Services
           </Button>
@@ -67,8 +57,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
