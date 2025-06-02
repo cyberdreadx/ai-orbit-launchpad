@@ -64,18 +64,18 @@ const CaseStudy = () => {
               </div>
             </div>
 
-            <div className="text-center">
+            <div className="text-center px-4">
               <blockquote className="text-xl md:text-2xl font-light text-green-300 italic mb-6">
                 "It felt like hiring 2 extra employees for a fraction of the cost."
               </blockquote>
               
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-8 py-6 text-lg rounded-full shadow-2xl shadow-green-500/25 transition-all duration-300 hover:scale-105"
+                className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-4 sm:px-6 md:px-8 py-3 md:py-6 text-sm sm:text-base md:text-lg rounded-full shadow-2xl shadow-green-500/25 transition-all duration-300 hover:scale-105 w-full sm:w-auto max-w-full"
                 onClick={() => window.open('https://calendly.com/eharouge/30min', '_blank')}
               >
-                Get Similar Results for Your Business
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <span className="truncate">Get Similar Results for Your Business</span>
+                <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
               </Button>
             </div>
           </CardContent>
