@@ -2,12 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, ArrowRight, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const JumpstartPackage = () => {
   const features = ["AI chatbot set up for your website or Instagram", "Workflow automation (emails, scheduling, reports)", "Weekly AI content system (blogs, captions, or product copy)", "1-on-1 onboarding call + setup walkthrough"];
-  
-  return (
-    <section id="jumpstart" className="py-20 px-4 relative">
+  return <section id="jumpstart" className="py-20 px-4 relative">
       <div className="absolute inset-0 bg-gradient-to-r from-purple-900/10 via-blue-900/10 to-purple-900/10" />
       
       <div className="max-w-4xl mx-auto relative">
@@ -30,12 +27,10 @@ const JumpstartPackage = () => {
           </CardHeader>
           <CardContent className="space-y-6">
             <ul className="space-y-4">
-              {features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-3 text-white/90">
+              {features.map((feature, index) => <li key={index} className="flex items-start gap-3 text-white/90">
                   <Check className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
                   <span>{feature}</span>
-                </li>
-              ))}
+                </li>)}
             </ul>
 
             <div className="border-t border-white/10 pt-6 text-center">
@@ -65,7 +60,7 @@ const JumpstartPackage = () => {
                 <div className="text-center">
                   <p className="text-white/60 text-sm mb-2">Or grab individual services for just $99 each</p>
                   <Link to="/services">
-                    <Button variant="outline" className="text-white border-white/20 hover:bg-white/10 text-sm">
+                    <Button variant="outline" className="text-white border-white/20 text-sm bg-emerald-600 hover:bg-emerald-500">
                       View $99 Services →
                     </Button>
                   </Link>
@@ -75,8 +70,6 @@ const JumpstartPackage = () => {
           </CardContent>
         </Card>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default JumpstartPackage;
