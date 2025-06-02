@@ -13,17 +13,17 @@ const Clients = () => {
     {
       name: "Flow Angels Entertainment",
       location: "Miami, FL",
-      logo: "/images/flow-angels-logo.png"
+      logo: "/placeholder.svg"
     },
     {
       name: "RougeChain LLC",
       location: "Miami Beach, FL", 
-      logo: "/images/rougechain-logo.png"
+      logo: "/placeholder.svg"
     },
     {
       name: "GLTCH Social Network",
       location: "Los Angeles, CA",
-      logo: "/images/gltch-logo.png"
+      logo: "/placeholder.svg"
     }
   ];
 
@@ -53,11 +53,16 @@ const Clients = () => {
               <CarouselItem key={index} className="pl-1 md:pl-2 lg:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                 <Card className="bg-white/10 backdrop-blur-lg border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 p-4 md:p-6 lg:p-8">
                   <div className="flex flex-col items-center text-center space-y-3 md:space-y-4">
-                    <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center">
+                    <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center bg-white/20 rounded-lg">
                       <img 
                         src={client.logo} 
                         alt={`${client.name} logo`}
-                        className="max-w-full max-h-full object-contain filter brightness-0 invert"
+                        className="max-w-full max-h-full object-contain"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          target.parentElement!.innerHTML = `<div class="text-white/60 text-center text-sm">${client.name}</div>`;
+                        }}
                       />
                     </div>
                     <div>
