@@ -6,6 +6,7 @@ import Features from "../components/sections/Features";
 import JumpstartPackage from "../components/sections/JumpstartPackage";
 import BusinessIntelligence from "../components/sections/BusinessIntelligence";
 import CaseStudy from "../components/sections/CaseStudy";
+import Clients from "../components/sections/Clients";
 import Contact from "../components/sections/Contact";
 import Footer from "../components/sections/Footer";
 import StickyButton from "../components/ui/StickyButton";
@@ -20,6 +21,7 @@ const Index = () => {
       <JumpstartPackage />
       <BusinessIntelligence />
       <CaseStudy />
+      <Clients />
       <Contact />
       <Footer />
       <StickyButton />
