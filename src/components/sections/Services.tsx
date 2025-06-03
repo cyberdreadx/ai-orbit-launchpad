@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Bot, Cog, PenTool, Zap, FileText, Calendar } from "lucide-react";
 
@@ -51,7 +50,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-20 px-4 relative">
+    <section id="services" className="py-20 px-4 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
