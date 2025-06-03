@@ -1,7 +1,10 @@
+
 import { Button } from "@/components/ui/button";
 import { Sparkles, ExternalLink } from "lucide-react";
+
 const Navbar = () => {
-  return <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -15,14 +18,25 @@ const Navbar = () => {
           {/* Navigation Links */}
           <div className="flex items-center gap-6">
             <Button variant="ghost" className="text-white/80 hover:text-white hover:bg-white/10" onClick={() => {
-            const servicesSection = document.getElementById('services');
-            if (servicesSection) {
-              servicesSection.scrollIntoView({
-                behavior: 'smooth'
-              });
-            }
-          }}>
+              const servicesSection = document.getElementById('services');
+              if (servicesSection) {
+                servicesSection.scrollIntoView({
+                  behavior: 'smooth'
+                });
+              }
+            }}>
               Services
+            </Button>
+            
+            <Button variant="ghost" className="text-white/80 hover:text-white hover:bg-white/10" onClick={() => {
+              const packagesSection = document.getElementById('packages');
+              if (packagesSection) {
+                packagesSection.scrollIntoView({
+                  behavior: 'smooth'
+                });
+              }
+            }}>
+              Pricing
             </Button>
             
             <Button variant="ghost" className="text-white/80 hover:text-white hover:bg-white/10" onClick={() => window.open('https://ai-integrations.gitbook.io/ai-integrations-docs', '_blank')}>
@@ -36,6 +50,8 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </nav>;
+    </nav>
+  );
 };
+
 export default Navbar;
