@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Bot, Cog, PenTool, Calendar, Lightbulb } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Services99 = () => {
   const services = [{
     title: "AI Chatbot Setup",
@@ -35,7 +34,6 @@ const Services99 = () => {
     link: "/services/prompts",
     color: "from-yellow-600 to-orange-600"
   }];
-
   return <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <div className="max-w-6xl mx-auto px-4 py-20">
         <div className="text-center mb-16">
@@ -49,7 +47,7 @@ const Services99 = () => {
             Individual AI solutions to solve specific business challenges
           </p>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/20 to-blue-500/20 backdrop-blur-md border border-green-500/30 mb-8">
-            <span className="text-sm text-white/90">Need everything? Get the full Jumpstart Package for $699</span>
+            <span className="text-sm text-white/90">Need everything? Get the full AI Business Pro Package for $699</span>
             <Link to="/#jumpstart">
               <Button variant="ghost" size="sm" className="text-white hover:bg-white/10 p-1">
                 Learn More →
@@ -96,5 +94,4 @@ const Services99 = () => {
       </div>
     </div>;
 };
-
 export default Services99;
