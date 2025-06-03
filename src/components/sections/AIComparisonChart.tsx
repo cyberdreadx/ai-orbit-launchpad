@@ -144,16 +144,22 @@ const AIComparisonChart = () => {
                     <span className="text-red-300 hover:text-red-200 transition-colors duration-200">
                       {item.without}{item.unit}
                     </span>
-                    <span className="text-white/50 animate-pulse">→</span>
+                    <span className="text-white/50 animate-pulse">
+                      <span className="text-white">→</span>
+                    </span>
                     <span className="text-green-300 font-bold hover:text-green-200 transition-colors duration-200">
                       {item.with}{item.unit}
                     </span>
                   </div>
                   <div className="text-xs text-white/50 mt-1 hover:text-white/70 transition-colors duration-200">
-                    +{item.metric === "Response Time" ? 
+                    <span className="text-white">+</span>
+                    {item.metric === "Response Time" ? 
                       Math.round(((item.without - item.with) / item.without) * 100) :
                       item.with - item.without
-                    }{item.metric === "Response Time" ? "% faster" : item.unit + " improvement"}
+                    }{item.metric === "Response Time" ? 
+                      <span className="text-white">% faster</span> : 
+                      <span className="text-white">{item.unit} improvement</span>
+                    }
                   </div>
                 </div>
               ))}
