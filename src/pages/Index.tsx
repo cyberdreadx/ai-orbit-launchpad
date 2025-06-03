@@ -3,6 +3,7 @@ import Hero from "../components/sections/Hero";
 import Services from "../components/sections/Services";
 import UseCases from "../components/sections/UseCases";
 import Features from "../components/sections/Features";
+import AIComparisonChart from "../components/sections/AIComparisonChart";
 import JumpstartPackage from "../components/sections/JumpstartPackage";
 import BusinessIntelligence from "../components/sections/BusinessIntelligence";
 import CaseStudy from "../components/sections/CaseStudy";
@@ -18,6 +19,7 @@ const Index = () => {
       <Services />
       <UseCases />
       <Features />
+      <AIComparisonChart />
       <JumpstartPackage />
       <BusinessIntelligence />
       <CaseStudy />
