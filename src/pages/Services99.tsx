@@ -1,7 +1,10 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Bot, Cog, PenTool, Calendar, Lightbulb } from "lucide-react";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { ArrowRight, Bot, Cog, PenTool, Calendar, Lightbulb, Check, X } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const Services99 = () => {
   const services = [{
     title: "AI Chatbot Setup",
@@ -34,7 +37,52 @@ const Services99 = () => {
     link: "/services/prompts",
     color: "from-yellow-600 to-orange-600"
   }];
-  return <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+
+  const comparisonData = [
+    {
+      feature: "Type of Client",
+      basic: "Solo creator needing 1 quick task",
+      lite: "Solo creator wanting basic but structured setup"
+    },
+    {
+      feature: "Automation Example",
+      basic: "Tally → Email or Tally → Google Sheet",
+      lite: "Same as $99, but set up inside Zapier"
+    },
+    {
+      feature: "Zapier Setup",
+      basic: false,
+      lite: "Included (free-tier only)"
+    },
+    {
+      feature: "AI Logic (ChatGPT)",
+      basic: false,
+      lite: false
+    },
+    {
+      feature: "CRM or Tracker",
+      basic: "No spreadsheet or CRM tracking",
+      lite: "No CRM, but more organized setup"
+    },
+    {
+      feature: "Revisions",
+      basic: false,
+      lite: "1 revision"
+    },
+    {
+      feature: "Onboarding Call",
+      basic: false,
+      lite: false
+    },
+    {
+      feature: "Ideal For",
+      basic: "Quick fixes, MVP-style automations",
+      lite: "Starter clients who want some structure"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <div className="max-w-6xl mx-auto px-4 py-20">
         <div className="text-center mb-16">
           <Link to="/" className="inline-flex items-center text-white/70 hover:text-white mb-6">
@@ -48,7 +96,7 @@ const Services99 = () => {
           </p>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/20 to-blue-500/20 backdrop-blur-md border border-green-500/30 mb-8">
             <span className="text-sm text-white/90">Need everything? Get the full AI Business Pro Package for $699</span>
-            <Link to="/#jumpstart">
+            <Link to="/#packages">
               <Button variant="ghost" size="sm" className="text-white hover:bg-white/10 p-1">
                 Learn More →
               </Button>
@@ -57,7 +105,8 @@ const Services99 = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {services.map((service, index) => <Card key={index} className="bg-white/5 backdrop-blur-lg border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105">
+          {services.map((service, index) => (
+            <Card key={index} className="bg-white/5 backdrop-blur-lg border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105">
               <CardHeader className="text-center">
                 <div className={`p-4 rounded-full bg-gradient-to-r ${service.color} w-16 h-16 mx-auto mb-4 flex items-center justify-center`}>
                   <service.icon className="w-8 h-8 text-white" />
@@ -74,8 +123,57 @@ const Services99 = () => {
                   </Button>
                 </Link>
               </CardContent>
-            </Card>)}
+            </Card>
+          ))}
         </div>
+
+        {/* Comparison Table */}
+        <Card className="bg-white/5 backdrop-blur-lg border-white/10 mb-12">
+          <CardHeader className="text-center">
+            <CardTitle className="text-2xl text-white mb-4">Service Comparison</CardTitle>
+            <p className="text-white/70">Compare our automation tiers to find the right fit</p>
+          </CardHeader>
+          <CardContent>
+            <Table>
+              <TableHeader>
+                <TableRow className="border-white/10">
+                  <TableHead className="text-white font-semibold">Feature</TableHead>
+                  <TableHead className="text-white font-semibold text-center">$99 Workflow Automation</TableHead>
+                  <TableHead className="text-white font-semibold text-center">$199 AI Automation Lite</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {comparisonData.map((row, index) => (
+                  <TableRow key={index} className="border-white/10">
+                    <TableCell className="text-white/90 font-medium">{row.feature}</TableCell>
+                    <TableCell className="text-center">
+                      {typeof row.basic === 'boolean' ? (
+                        row.basic ? (
+                          <Check className="w-5 h-5 text-green-400 mx-auto" />
+                        ) : (
+                          <X className="w-5 h-5 text-red-400 mx-auto" />
+                        )
+                      ) : (
+                        <span className="text-white/80 text-sm">{row.basic}</span>
+                      )}
+                    </TableCell>
+                    <TableCell className="text-center">
+                      {typeof row.lite === 'boolean' ? (
+                        row.lite ? (
+                          <Check className="w-5 h-5 text-green-400 mx-auto" />
+                        ) : (
+                          <X className="w-5 h-5 text-red-400 mx-auto" />
+                        )
+                      ) : (
+                        <span className="text-white/80 text-sm">{row.lite}</span>
+                      )}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </CardContent>
+        </Card>
 
         <Card className="bg-white/5 backdrop-blur-lg border-white/10 max-w-2xl mx-auto">
           <CardContent className="text-center p-8">
@@ -92,6 +190,8 @@ const Services99 = () => {
           </CardContent>
         </Card>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default Services99;
