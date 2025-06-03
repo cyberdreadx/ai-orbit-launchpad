@@ -1,75 +1,143 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, ArrowRight, Zap } from "lucide-react";
+import { Check, ArrowRight, Zap, Star, Crown } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const JumpstartPackage = () => {
-  const features = ["AI chatbot set up for your website or Instagram", "Workflow automation (emails, scheduling, reports)", "Weekly AI content system (blogs, captions, or product copy)", "1-on-1 onboarding call + setup walkthrough"];
-  return <section id="jumpstart" className="py-20 px-4 relative">
+  const packages = [
+    {
+      name: "AI Automation Lite",
+      price: "$199",
+      icon: Zap,
+      gradient: "from-blue-600 to-cyan-600",
+      description: "Perfect for solo creators getting started",
+      features: [
+        "1 basic automation (form to Google Sheet or email)",
+        "Basic intake form (Tally)",
+        "No ChatGPT logic",
+        "Runs on free-tier Zapier",
+        "1 revision included"
+      ],
+      ideal: "Good for solo creators, basic use cases"
+    },
+    {
+      name: "AI Business Starter",
+      price: "$399",
+      icon: Star,
+      gradient: "from-purple-600 to-blue-600",
+      description: "Most popular for coaches & freelancers",
+      features: [
+        "Intake form → spreadsheet + email summary",
+        "AI summary using GPT",
+        "Spreadsheet CRM tracking",
+        "Zapier setup (up to 2 steps)",
+        "Email automation setup",
+        "1 onboarding call"
+      ],
+      ideal: "Ideal for coaches, freelancers, service pros",
+      popular: true
+    },
+    {
+      name: "AI Business Pro",
+      price: "$699",
+      icon: Crown,
+      gradient: "from-purple-600 to-pink-600",
+      description: "Complete AI business automation",
+      features: [
+        "All from Starter +",
+        "AI workflows with ChatGPT",
+        "Multi-step Zapier automation",
+        "Client CRM (Notion, Sheet, or Airtable)",
+        "1 month monitoring + tweaks",
+        "Help with setting up Zapier, Tally, etc.",
+        "Content automation add-on (optional)"
+      ],
+      ideal: "Great for agencies, consultants, or digital businesses"
+    }
+  ];
+
+  return (
+    <section id="packages" className="py-20 px-4 relative">
       <div className="absolute inset-0 bg-gradient-to-r from-purple-900/10 via-blue-900/10 to-purple-900/10" />
       
-      <div className="max-w-4xl mx-auto relative">
-        <div className="text-center mb-12">
+      <div className="max-w-7xl mx-auto relative">
+        <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 backdrop-blur-md border border-purple-500/30 mb-6">
             <Zap className="w-4 h-4 text-yellow-400" />
-            <span className="text-sm text-white/90">Signature Service</span>
+            <span className="text-sm text-white/90">AI Automation Packages</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
-            ⚙️ AI Business Jumpstart Package
+            ⚙️ Choose Your AI Automation Level
           </h2>
           <p className="text-xl text-white/70 mb-8">
-            Everything you need to start using AI in 7 days.
+            From basic automation to complete AI business workflows
           </p>
         </div>
 
-        <Card className="bg-white/5 backdrop-blur-lg border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105 max-w-2xl mx-auto">
-          <CardHeader className="text-center pb-4">
-            <CardTitle className="text-2xl text-white mb-4">✅ What's Included:</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <ul className="space-y-4">
-              {features.map((feature, index) => <li key={index} className="flex items-start gap-3 text-white/90">
-                  <Check className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
-                  <span>{feature}</span>
-                </li>)}
-            </ul>
-
-            <div className="border-t border-white/10 pt-6 text-center">
-              <p className="text-white/80 mb-4">Delivered in 7 days. No tech skills required.</p>
+        <div className="grid md:grid-cols-3 gap-8">
+          {packages.map((pkg, index) => (
+            <Card 
+              key={index}
+              className={`bg-white/5 backdrop-blur-lg border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105 relative ${
+                pkg.popular ? 'ring-2 ring-purple-500/50' : ''
+              }`}
+            >
+              {pkg.popular && (
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white text-sm px-4 py-1 rounded-full">
+                    Most Popular
+                  </div>
+                </div>
+              )}
               
-              <div className="grid grid-cols-3 gap-4 mb-6 text-center">
-                <div>
-                  <div className="text-2xl font-bold text-white">💸 $499</div>
-                  <div className="text-sm text-white/60">Flat Rate</div>
+              <CardHeader className="text-center pb-4">
+                <div className={`p-4 rounded-full bg-gradient-to-r ${pkg.gradient} w-16 h-16 mx-auto mb-4 flex items-center justify-center`}>
+                  <pkg.icon className="w-8 h-8 text-white" />
                 </div>
-                <div>
-                  <div className="text-2xl font-bold text-white">📅 7 Days</div>
-                  <div className="text-sm text-white/60">Timeline</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-white">⚡ Free</div>
-                  <div className="text-sm text-white/60">AI Cheat Sheet</div>
-                </div>
-              </div>
+                <CardTitle className="text-2xl text-white mb-2">{pkg.name}</CardTitle>
+                <div className="text-3xl font-bold text-white mb-2">{pkg.price}</div>
+                <p className="text-white/70 text-sm">{pkg.description}</p>
+              </CardHeader>
+              
+              <CardContent className="space-y-6">
+                <ul className="space-y-3">
+                  {pkg.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-white/90 text-sm">
+                      <Check className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
 
-              <div className="space-y-3">
-                <Button size="lg" className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-6 text-lg rounded-full shadow-2xl shadow-purple-500/25 transition-all duration-300 hover:scale-105" onClick={() => window.open('https://calendly.com/eharouge/30min', '_blank')}>
-                  🔘 Book Your Jumpstart Call
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-                
-                <div className="text-center">
-                  <p className="text-white/60 text-sm mb-2">Or grab individual services for just $99 each</p>
-                  <Link to="/services">
-                    <Button variant="outline" className="text-white border-white/20 text-sm bg-emerald-600 hover:bg-emerald-500">
-                      View $99 Services →
-                    </Button>
-                  </Link>
+                <div className="border-t border-white/10 pt-4">
+                  <p className="text-white/80 text-sm mb-4">✅ {pkg.ideal}</p>
+                  
+                  <Button 
+                    size="lg" 
+                    className={`w-full bg-gradient-to-r ${pkg.gradient} hover:opacity-90 text-white py-4 text-base rounded-full shadow-xl transition-all duration-300 hover:scale-105`}
+                    onClick={() => window.open('https://calendly.com/eharouge/30min', '_blank')}
+                  >
+                    Get Started - {pkg.price}
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
                 </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <p className="text-white/60 text-sm mb-4">Need something smaller?</p>
+          <Link to="/services">
+            <Button variant="outline" className="text-white border-white/20 hover:bg-white/10">
+              View $99 Individual Services →
+            </Button>
+          </Link>
+        </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default JumpstartPackage;

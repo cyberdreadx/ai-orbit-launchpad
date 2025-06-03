@@ -1,47 +1,51 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Bot, Cog, PenTool, Zap } from "lucide-react";
+import { Bot, Cog, PenTool, Zap, FileText, Calendar } from "lucide-react";
 
 const Services = () => {
   const services = [
     {
-      icon: Bot,
-      title: "Smart Customer Support",
-      description: "24/7 AI chatbots and automated response systems",
+      icon: FileText,
+      title: "Smart Form Automation",
+      description: "Turn form submissions into organized data",
       features: [
-        "Custom AI chatbot to answer FAQs 24/7",
-        "GPT-powered email & DM responder",
-        "Lead filtering & smart tagging system"
+        "Custom intake forms with Tally",
+        "Auto-sync to Google Sheets or CRM",
+        "AI-powered email summaries",
+        "Lead scoring and tagging"
       ]
     },
     {
       icon: Cog,
       title: "Workflow Automation",
-      description: "Streamline operations with intelligent automation",
+      description: "Multi-step business process automation",
       features: [
-        "AI task assistants for scheduling, follow-ups, and reports",
-        "Integration with Zapier / Make / Notion / Google Workspace",
-        "Auto-generation of invoices, forms, and reports"
+        "Zapier automation setup (2-10 steps)",
+        "Integration with 100+ apps",
+        "Email sequences and follow-ups",
+        "Task creation and assignment"
       ]
     },
     {
-      icon: PenTool,
-      title: "AI Content Engine",
-      description: "Generate compelling content that converts",
+      icon: Bot,
+      title: "AI-Powered Logic",
+      description: "ChatGPT integration for smart decisions",
       features: [
-        "Weekly content generation (blogs, captions, emails)",
-        "Personalized copywriting using brand tone",
-        "Product descriptions + SEO boost"
+        "AI content generation and summaries",
+        "Smart data processing",
+        "Personalized responses",
+        "Intelligent routing and filtering"
       ]
     },
     {
-      icon: Zap,
-      title: "Fast Setup",
-      description: "No-code solutions delivered quickly",
+      icon: Calendar,
+      title: "CRM & Monitoring",
+      description: "Track and optimize your automations",
       features: [
-        "Delivered in under 7 days",
-        "No-code and low-code friendly",
-        "Works with your current stack (Meta, Google, Shopify, etc.)"
+        "Client CRM setup (Notion/Airtable)",
+        "Performance monitoring",
+        "Monthly optimization tweaks",
+        "Training and ongoing support"
       ]
     }
   ];
@@ -51,10 +55,10 @@ const Services = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-            AI Integration Services
+            AI Automation Services
           </h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            Transform your business operations with our comprehensive AI solutions designed for modern enterprises.
+            Streamline your business operations with intelligent automation solutions that work 24/7.
           </p>
         </div>
         
