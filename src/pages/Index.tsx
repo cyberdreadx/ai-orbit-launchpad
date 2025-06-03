@@ -11,21 +11,25 @@ import Clients from "../components/sections/Clients";
 import Contact from "../components/sections/Contact";
 import Footer from "../components/sections/Footer";
 import StickyButton from "../components/ui/StickyButton";
+import Navbar from "../components/ui/Navbar";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-x-hidden">
-      <Hero />
-      <Services />
-      <UseCases />
-      <Features />
-      <AIComparisonChart />
-      <JumpstartPackage />
-      <BusinessIntelligence />
-      <CaseStudy />
-      <Clients />
-      <Contact />
-      <Footer />
+      <Navbar />
+      <div className="pt-16">
+        <Hero />
+        <Services />
+        <UseCases />
+        <Features />
+        <AIComparisonChart />
+        <JumpstartPackage />
+        <BusinessIntelligence />
+        <CaseStudy />
+        <Clients />
+        <Contact />
+        <Footer />
+      </div>
       <StickyButton />
     </div>
   );
