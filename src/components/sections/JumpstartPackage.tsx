@@ -58,10 +58,10 @@ const JumpstartPackage = () => {
   ];
 
   return (
-    <section id="packages" className="py-20 px-4 relative">
+    <section id="packages" className="py-20 px-4 relative max-w-full overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-purple-900/10 via-blue-900/10 to-purple-900/10" />
       
-      <div className="max-w-7xl mx-auto relative">
+      <div className="max-w-7xl mx-auto relative w-full">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 backdrop-blur-md border border-purple-500/30 mb-6">
             <Zap className="w-4 h-4 text-yellow-400" />
@@ -78,11 +78,11 @@ const JumpstartPackage = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 max-w-full">
           {packages.map((pkg, index) => (
             <Card 
               key={index} 
-              className={`bg-white/5 backdrop-blur-lg border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105 relative ${pkg.popular ? 'ring-2 ring-purple-500/50' : ''}`}
+              className={`bg-white/5 backdrop-blur-lg border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105 relative max-w-full ${pkg.popular ? 'ring-2 ring-purple-500/50' : ''}`}
             >
               {pkg.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -106,7 +106,7 @@ const JumpstartPackage = () => {
                   {pkg.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-white/90 text-sm">
                       <Check className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
-                      <span>{feature}</span>
+                      <span className="break-words">{feature}</span>
                     </li>
                   ))}
                 </ul>

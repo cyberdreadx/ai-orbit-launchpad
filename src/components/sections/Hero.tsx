@@ -12,7 +12,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 max-w-full">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,119,198,0.3),transparent_50%)]" />
@@ -21,7 +21,7 @@ const Hero = () => {
       <OrbitAnimation />
       
       {/* Content */}
-      <div className="relative z-10 text-center max-w-5xl mx-auto">
+      <div className="relative z-10 text-center max-w-5xl mx-auto w-full">
         <div className="mb-6 flex justify-center">
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
             <Sparkles className="w-4 h-4 text-yellow-400" />
@@ -40,7 +40,7 @@ const Hero = () => {
           we make AI integration seamless and profitable.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-full overflow-hidden">
           <Button 
             size="lg" 
             className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 text-lg rounded-full shadow-2xl shadow-blue-500/25 transition-all duration-300 hover:scale-105"
@@ -61,7 +61,7 @@ const Hero = () => {
           </Button>
         </div>
         
-        <div className="mt-12 flex flex-wrap justify-center gap-8 text-white/60">
+        <div className="mt-12 flex flex-wrap justify-center gap-8 text-white/60 max-w-full">
           <div className="text-center">
             <div className="text-2xl font-bold text-white">7 Days</div>
             <div className="text-sm">Fast Setup</div>
