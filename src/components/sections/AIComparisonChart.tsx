@@ -49,7 +49,7 @@ const AIComparisonChart = () => {
   };
 
   return (
-    <section className="py-20 px-4 relative">
+    <section className="py-20 px-4 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-900/5 to-transparent" />
       
       <div className="max-w-6xl mx-auto relative">
@@ -62,7 +62,7 @@ const AIComparisonChart = () => {
           </p>
         </div>
 
-        <Card className="bg-white/5 backdrop-blur-lg border-white/10">
+        <Card className="bg-white/5 backdrop-blur-lg border-white/10 overflow-hidden">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl text-white mb-4">Business Performance Comparison</CardTitle>
             <div className="flex justify-center gap-8 text-sm">
@@ -76,16 +76,17 @@ const AIComparisonChart = () => {
               </div>
             </div>
           </CardHeader>
-          <CardContent>
-            <ChartContainer config={chartConfig} className="h-[400px] w-full">
+          <CardContent className="overflow-hidden">
+            <ChartContainer config={chartConfig} className="h-[500px] w-full">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={comparisonData} margin={{ top: 20, right: 30, left: 20, bottom: 80 }}>
+                <LineChart data={comparisonData} margin={{ top: 20, right: 30, left: 20, bottom: 120 }}>
                   <XAxis 
                     dataKey="metric" 
                     angle={-45}
                     textAnchor="end"
-                    height={80}
-                    tick={{ fill: 'rgba(255,255,255,0.7)', fontSize: 12 }}
+                    height={120}
+                    interval={0}
+                    tick={{ fill: 'rgba(255,255,255,0.7)', fontSize: 11 }}
                   />
                   <YAxis tick={{ fill: 'rgba(255,255,255,0.7)', fontSize: 12 }} />
                   <ChartTooltip 
