@@ -61,8 +61,11 @@ const AIComparisonChart = () => {
       
       <div className="max-w-6xl mx-auto relative">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-green-200 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">
-            📊 The AI Advantage
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 hover:scale-105 transition-transform duration-300">
+            <span className="text-white">📊</span>{" "}
+            <span className="bg-gradient-to-r from-white to-green-200 bg-clip-text text-transparent">
+              The AI Advantage
+            </span>
           </h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
             See the dramatic difference AI integration makes for businesses across key metrics
