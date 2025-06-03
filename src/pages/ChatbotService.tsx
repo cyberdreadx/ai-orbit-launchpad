@@ -57,9 +57,7 @@ const ChatbotService = () => {
               <div className="text-center">
                 <p className="text-white/70 mb-4">Want the full package?</p>
                 <Link to="/#jumpstart">
-                  <Button variant="outline" className="text-white border-white/20 bg-green-600 hover:bg-green-500">
-                    Upgrade to Full Jumpstart Package ($499)
-                  </Button>
+                  <Button variant="outline" className="text-white border-white/20 bg-green-600 hover:bg-green-500">Upgrade to Full Jumpstart Package ($699)</Button>
                 </Link>
               </div>
             </div>
