@@ -16,8 +16,11 @@ const CaseStudy = () => {
       
       <div className="max-w-5xl mx-auto relative">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-green-200 bg-clip-text text-transparent">
-            🧪 Case Study – Local Fitness Studio
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="text-white">🧪</span>{" "}
+            <span className="bg-gradient-to-r from-white to-green-200 bg-clip-text text-transparent">
+              Case Study – Local Fitness Studio
+            </span>
           </h2>
         </div>
 

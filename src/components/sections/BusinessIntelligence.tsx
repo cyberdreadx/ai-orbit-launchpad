@@ -28,8 +28,11 @@ const BusinessIntelligence = () => {
     <section className="py-20 px-4 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-green-200 bg-clip-text text-transparent">
-            🧠 Business Intelligence & Tools
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="text-white">🧠</span>{" "}
+            <span className="bg-gradient-to-r from-white to-green-200 bg-clip-text text-transparent">
+              Business Intelligence & Tools
+            </span>
           </h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
             Unlock the power of your data with AI-driven business intelligence solutions that provide actionable insights.

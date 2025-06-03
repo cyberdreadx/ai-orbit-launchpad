@@ -30,8 +30,11 @@ const UseCases = () => {
       
       <div className="max-w-6xl mx-auto relative">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-            💡 See It in Action
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="text-white">💡</span>{" "}
+            <span className="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+              See It in Action
+            </span>
           </h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
             Real businesses, real results. See how AI transforms operations across industries.
