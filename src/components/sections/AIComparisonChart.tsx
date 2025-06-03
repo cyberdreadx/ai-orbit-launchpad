@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Cell } from "recharts";
+import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from "recharts";
 
 const AIComparisonChart = () => {
   const comparisonData = [
@@ -79,7 +79,7 @@ const AIComparisonChart = () => {
           <CardContent>
             <ChartContainer config={chartConfig} className="h-[400px] w-full">
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={comparisonData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                <LineChart data={comparisonData} margin={{ top: 20, right: 30, left: 20, bottom: 80 }}>
                   <XAxis 
                     dataKey="metric" 
                     angle={-45}
@@ -95,9 +95,23 @@ const AIComparisonChart = () => {
                       name === 'without' ? 'Without AI' : 'With AI Integration'
                     ]}
                   />
-                  <Bar dataKey="without" fill="#ef4444" radius={[4, 4, 0, 0]} />
-                  <Bar dataKey="with" fill="#22c55e" radius={[4, 4, 0, 0]} />
-                </BarChart>
+                  <Line 
+                    type="monotone" 
+                    dataKey="without" 
+                    stroke="#ef4444" 
+                    strokeWidth={3}
+                    dot={{ fill: '#ef4444', strokeWidth: 2, r: 6 }}
+                    activeDot={{ r: 8, stroke: '#ef4444', strokeWidth: 2 }}
+                  />
+                  <Line 
+                    type="monotone" 
+                    dataKey="with" 
+                    stroke="#22c55e" 
+                    strokeWidth={3}
+                    dot={{ fill: '#22c55e', strokeWidth: 2, r: 6 }}
+                    activeDot={{ r: 8, stroke: '#22c55e', strokeWidth: 2 }}
+                  />
+                </LineChart>
               </ResponsiveContainer>
             </ChartContainer>
             
