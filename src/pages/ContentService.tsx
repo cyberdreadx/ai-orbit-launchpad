@@ -73,7 +73,7 @@ const ContentService = () => {
               <div className="text-center">
                 <p className="text-white/70 mb-4">Want the full package?</p>
                 <Link to="/#jumpstart">
-                  <Button variant="outline" className="text-white border-white/20 hover:bg-white/10">
+                  <Button variant="outline" className="text-slate-900 bg-white border-white/20 hover:bg-gray-100">
                     Upgrade to Full Jumpstart Package ($499)
                   </Button>
                 </Link>
