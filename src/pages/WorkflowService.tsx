@@ -2,8 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, ArrowRight, Cog, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const WorkflowService = () => {
-  const features = ["1 custom workflow automation", "Email sequences or form automation", "Zapier/Make integration setup", "Lead management automation", "Training & handoff included"];
+  const features = ["1 custom workflow automation", "Email sequences or form automation", "Tally form integration setup", "Lead management automation", "Training & handoff included"];
+  
   return <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <div className="max-w-4xl mx-auto px-4 py-20">
         <div className="text-center mb-12">
@@ -66,4 +68,5 @@ const WorkflowService = () => {
       </div>
     </div>;
 };
+
 export default WorkflowService;
