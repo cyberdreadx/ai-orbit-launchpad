@@ -33,7 +33,7 @@ const Navbar = () => {
             <Button
               variant="ghost"
               className="text-white/80 hover:text-white hover:bg-white/10"
-              onClick={() => window.open('https://ai-integrations.gitbook.io/ai-integrations-docs/chatbot-setup-optional-add-on', '_blank')}
+              onClick={() => window.open('https://ai-integrations.gitbook.io/ai-integrations-docs', '_blank')}
             >
               Documentation
               <ExternalLink className="ml-2 w-4 h-4" />
