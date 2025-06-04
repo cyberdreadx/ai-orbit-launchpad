@@ -1,5 +1,5 @@
 
-import { Sparkles } from "lucide-react";
+import { Sparkles, Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -14,6 +14,18 @@ const Footer = () => {
           </div>
           
           <div className="text-center md:text-right">
+            <div className="flex items-center justify-center md:justify-end gap-4 mb-2">
+              <span className="text-white/60">Follow us on Instagram</span>
+              <a 
+                href="https://instagram.com/ai.integrations.app" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
+                @ai.integrations.app
+              </a>
+            </div>
             <p className="text-white/60 mb-2">
               Transform your business with AI • Fast Setup • Secure Solutions
             </p>
