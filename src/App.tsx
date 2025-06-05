@@ -12,6 +12,7 @@ import WorkflowService from "./pages/WorkflowService";
 import ContentService from "./pages/ContentService";
 import BookingService from "./pages/BookingService";
 import PromptsService from "./pages/PromptsService";
+import WorkflowExamples from "./pages/WorkflowExamples";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/services/content" element={<ContentService />} />
           <Route path="/services/booking" element={<BookingService />} />
           <Route path="/services/prompts" element={<PromptsService />} />
+          <Route path="/workflow-examples" element={<WorkflowExamples />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

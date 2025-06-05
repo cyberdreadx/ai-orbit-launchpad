@@ -14,6 +14,11 @@ const Navbar = () => {
     setIsMobileMenuOpen(false); // Close mobile menu after clicking
   };
 
+  const navigateToPage = (path: string) => {
+    window.location.href = path;
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,6 +35,10 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-6">
             <Button variant="ghost" className="text-white/80 hover:text-white hover:bg-white/10" onClick={() => scrollToSection('services')}>
               Services
+            </Button>
+            
+            <Button variant="ghost" className="text-white/80 hover:text-white hover:bg-white/10" onClick={() => navigateToPage('/workflow-examples')}>
+              Workflows
             </Button>
             
             <Button variant="ghost" className="text-white/80 hover:text-white hover:bg-white/10" onClick={() => scrollToSection('packages')}>
@@ -69,6 +78,14 @@ const Navbar = () => {
                 onClick={() => scrollToSection('services')}
               >
                 Services
+              </Button>
+              
+              <Button 
+                variant="ghost" 
+                className="w-full text-left text-white/80 hover:text-white hover:bg-white/10 justify-start" 
+                onClick={() => navigateToPage('/workflow-examples')}
+              >
+                Workflows
               </Button>
               
               <Button 
