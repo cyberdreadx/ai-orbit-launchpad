@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Home, Calculator, Hotel, Scissors, ShoppingBag } from "lucide-react";
 import Navbar from "../components/ui/Navbar";
 import Footer from "../components/sections/Footer";
+
 const WorkflowExamples = () => {
   const [selectedWorkflow, setSelectedWorkflow] = useState("realEstate");
   const workflows = {
@@ -164,6 +165,7 @@ const WorkflowExamples = () => {
       result: "✅ Cut response time, boost retention"
     }
   };
+
   const getStepColor = (type: string) => {
     switch (type) {
       case "input":
@@ -188,94 +190,116 @@ const WorkflowExamples = () => {
         return "bg-gray-500/20 border-gray-500/30 text-gray-300";
     }
   };
+
   const currentWorkflow = workflows[selectedWorkflow as keyof typeof workflows];
-  return <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Navbar />
-      <div className="pt-24 pb-16 px-4">
+      <div className="pt-20 pb-8 px-4 sm:pt-24 sm:pb-16">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <div className="text-center mb-8 sm:mb-16">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6">
               <span className="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                 Workflow Examples
               </span>
             </h1>
-            <p className="text-xl text-white/70 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto px-2">
               See how AI automation transforms different businesses with real workflow examples
             </p>
           </div>
 
           {/* Workflow Selector */}
           <Tabs value={selectedWorkflow} onValueChange={setSelectedWorkflow} className="w-full">
-            <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 bg-white/5 backdrop-blur-lg border border-white/10 mb-8">
-              {Object.entries(workflows).map(([key, workflow]) => <TabsTrigger key={key} value={key} className="data-[state=active]:bg-white/10 data-[state=active]:text-white text-white/70 text-xs md:text-sm">
-                  <workflow.icon className="w-4 h-4 mr-1" />
-                  <span className="hidden md:inline">{workflow.title.split(' ')[1]}</span>
-                  <span className="md:hidden">{workflow.title.split(' ')[0]}</span>
-                </TabsTrigger>)}
+            <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 bg-white/5 backdrop-blur-lg border border-white/10 mb-6 sm:mb-8 h-auto p-2">
+              {Object.entries(workflows).map(([key, workflow]) => (
+                <TabsTrigger 
+                  key={key} 
+                  value={key} 
+                  className="data-[state=active]:bg-white/10 data-[state=active]:text-white text-white/70 text-xs md:text-sm p-2 h-auto flex flex-col sm:flex-row items-center gap-1"
+                >
+                  <workflow.icon className="w-4 h-4" />
+                  <span className="hidden sm:inline">{workflow.title.split(' ')[1]}</span>
+                  <span className="sm:hidden text-center leading-tight">{workflow.title.split(' ')[0]}</span>
+                </TabsTrigger>
+              ))}
             </TabsList>
 
             {/* Workflow Display */}
-            {Object.entries(workflows).map(([key, workflow]) => <TabsContent key={key} value={key} className="mt-8">
-                <div className="grid lg:grid-cols-2 gap-8">
+            {Object.entries(workflows).map(([key, workflow]) => (
+              <TabsContent key={key} value={key} className="mt-6 sm:mt-8">
+                <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
                   {/* Problem & Solution Overview */}
-                  <Card className="bg-white/5 backdrop-blur-lg border-white/10">
-                    <CardHeader>
-                      <CardTitle className="flex items-center gap-3 text-2xl text-white">
-                        <workflow.icon className="w-8 h-8 text-blue-300" />
-                        {workflow.title}
+                  <Card className="bg-white/5 backdrop-blur-lg border-white/10 order-2 lg:order-1">
+                    <CardHeader className="p-4 sm:p-6">
+                      <CardTitle className="flex items-center gap-2 sm:gap-3 text-lg sm:text-2xl text-white">
+                        <workflow.icon className="w-6 h-6 sm:w-8 sm:h-8 text-blue-300 flex-shrink-0" />
+                        <span className="text-sm sm:text-2xl">{workflow.title}</span>
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="space-y-6">
+                    <CardContent className="space-y-4 sm:space-y-6 p-4 pt-0 sm:p-6 sm:pt-0">
                       <div>
-                        <h4 className="text-red-300 font-semibold mb-2">Problem:</h4>
-                        <p className="text-white/80">{workflow.problem}</p>
+                        <h4 className="text-red-300 font-semibold mb-2 text-sm sm:text-base">Problem:</h4>
+                        <p className="text-white/80 text-sm sm:text-base">{workflow.problem}</p>
                       </div>
                       <div>
-                        <h4 className="text-green-300 font-semibold mb-2">Result:</h4>
-                        <p className="text-green-300 font-medium">{workflow.result}</p>
+                        <h4 className="text-green-300 font-semibold mb-2 text-sm sm:text-base">Result:</h4>
+                        <p className="text-green-300 font-medium text-sm sm:text-base">{workflow.result}</p>
                       </div>
-                      <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700" onClick={() => window.open('https://calendly.com/eharouge/30min', '_blank')}>
+                      <Button 
+                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-sm sm:text-base" 
+                        onClick={() => window.open('https://calendly.com/eharouge/30min', '_blank')}
+                      >
                         Get This Workflow For Your Business
                       </Button>
                     </CardContent>
                   </Card>
 
                   {/* Workflow Steps */}
-                  <Card className="bg-white/5 backdrop-blur-lg border-white/10">
-                    <CardHeader>
-                      <CardTitle className="text-xl text-white">Automation Flow</CardTitle>
+                  <Card className="bg-white/5 backdrop-blur-lg border-white/10 order-1 lg:order-2">
+                    <CardHeader className="p-4 sm:p-6">
+                      <CardTitle className="text-lg sm:text-xl text-white">Automation Flow</CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <div className="space-y-4">
-                        {workflow.steps.map((step, index) => <div key={step.id} className="flex items-center gap-4">
-                            <div className={`flex-shrink-0 w-8 h-8 rounded-full border-2 flex items-center justify-center text-sm font-bold ${getStepColor(step.type)}`}>
+                    <CardContent className="p-4 pt-0 sm:p-6 sm:pt-0">
+                      <div className="space-y-3 sm:space-y-4">
+                        {workflow.steps.map((step, index) => (
+                          <div key={step.id} className="flex items-center gap-2 sm:gap-4">
+                            <div className={`flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 flex items-center justify-center text-xs sm:text-sm font-bold ${getStepColor(step.type)}`}>
                               {step.id}
                             </div>
-                            <div className={`flex-1 p-3 rounded-lg border ${getStepColor(step.type)}`}>
-                              <p className="text-sm font-medium">{step.text}</p>
+                            <div className={`flex-1 p-2 sm:p-3 rounded-lg border ${getStepColor(step.type)}`}>
+                              <p className="text-xs sm:text-sm font-medium">{step.text}</p>
                             </div>
-                            {index < workflow.steps.length - 1 && <ArrowRight className="w-4 h-4 text-white/40 flex-shrink-0" />}
-                          </div>)}
+                            {index < workflow.steps.length - 1 && (
+                              <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 text-white/40 flex-shrink-0 hidden sm:block" />
+                            )}
+                          </div>
+                        ))}
                       </div>
                     </CardContent>
                   </Card>
                 </div>
-              </TabsContent>)}
+              </TabsContent>
+            ))}
           </Tabs>
 
           {/* Call to Action */}
-          <div className="text-center mt-16">
+          <div className="text-center mt-12 sm:mt-16">
             <Card className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-lg border-blue-500/30 max-w-2xl mx-auto">
-              <CardContent className="p-8 bg-blue-950">
-                <h3 className="text-2xl font-bold text-white mb-4">
+              <CardContent className="p-6 sm:p-8 bg-blue-950">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
                   Ready to Automate Your Business?
                 </h3>
-                <p className="text-white/80 mb-6">
+                <p className="text-white/80 mb-4 sm:mb-6 text-sm sm:text-base">
                   Get a custom workflow designed for your specific business needs. 
                   Free consultation to identify your automation opportunities.
                 </p>
-                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700" onClick={() => window.open('https://calendly.com/eharouge/30min', '_blank')}>
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 w-full sm:w-auto text-sm sm:text-base" 
+                  onClick={() => window.open('https://calendly.com/eharouge/30min', '_blank')}
+                >
                   Schedule Free Consultation
                 </Button>
               </CardContent>
@@ -284,6 +308,8 @@ const WorkflowExamples = () => {
         </div>
       </div>
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default WorkflowExamples;
